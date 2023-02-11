@@ -1,0 +1,45 @@
+<!--pages/index2/index2.wxml-->
+<view class="head0" >
+  <view class="head_bg"></view>
+</view>
+<view class="head ">
+      <view class="head_input" bindtap="gotoInput">
+        <image src="/img/find.png" class="search_icon"></image>
+        <text>请输入需要发送的指令:</text>
+      </view>
+</view>
+<scroll-view class=".scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+  <view class="scroll-view-item_H1" >
+    <view class="flex">
+      <view class="scroll-text1">发送指令</view>
+      <image style="width: 37rpx;height: 37rpx;margin-top: 15rpx;" src="/img/more.png" bindtap="ifsendData"></image>
+    </view>
+  </view>
+  <view class="scroll-view-item_H1">
+    <view class="flex">
+      <view class="scroll-text1">接收消息</view>
+      <image style="width: 37rpx;height: 37rpx;margin-top: 15rpx;" src="/img/more.png"  bindtap="ifgetData"></image>
+    </view>
+  </view>
+</scroll-view>
+<view class="notice">
+  <image src="/img/scroll.png" mode="widthFix" style="height:1px;width: 60px; justify-content: center;align-items: center;"></image>
+  <view class="notice_desc" bindtap="gotoHelp">
+    <view style="transform: translateX(-{{ distance }}px);">
+      <text style="margin-right:{{ space }}px;"></text>
+      <text id="mjltest">欢迎来到SendAndGet，点此进入使用说明！</text>
+    </view>
+  </view>
+</view>
+<view class="icon"> 
+  <view class="icon1">
+    <image style="height: 160px;width:190px;" src="/img/icon3.png"></image>
+  </view>
+</view>
+<view class="van0">
+  <view class="van">
+    <text class="van1">接收的信息: </text>
+    <text class="van2;">{{rdata}}</text>
+  </view>
+</view>
+

@@ -1,0 +1,10 @@
+<!--pages/index2/inputSend/inputSend.wxml-->
+<text class="text1">请输入需要发送的指令：</text>
+<view class="van0">
+  <view class="van">
+    <textarea  bindblur="bindTextAreaBlur" class="van2" 	auto-height="true" 	maxlength="-1"  value="{{sdata}}"></textarea>
+  </view>
+</view>
+<view class="save" bindtap="ifsave">
+  <text class="save1" > 保存 </text>
+</view>

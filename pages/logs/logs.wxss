@@ -1,0 +1,112 @@
+.head {
+  width: 100%;
+  height: 13%;
+  overflow: hidden;
+  position: fixed;
+  position: relative;
+}
+.head::after {
+  content: '';
+  width: 140%;
+  height: 100rpx;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  top: 0;
+  border-radius: 0 0 50% 50%;
+  /* background: rgb(5,5,158,0.3); */
+  background: linear-gradient(180deg, rgba(37, 19, 92, 0.904) 30%, rgb(5,5,158,0.3) 100%)
+}
+.user-info-box{
+  margin-top: 20rpx;
+  height: 50rpx;
+  display:flex;
+  align-items:center;
+  position:relative;
+  z-index: 1;
+}
+/*头像*/
+.user-info-box .portrait{
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 10rpx;
+  /*border:5rpx solid #fff;*/
+  border-radius: 50%;
+  margin-top: 10rpx;
+}
+/*用户名*/
+.user-info-box .username{
+  font-size: 23rpx;
+  color: #fff;
+  margin-left: 10rpx;
+  /* position:relative; */
+}
+.van0{
+  align-items: center; 
+  justify-content: center;
+  display: flex;
+}
+.van{
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background-color: rgb(235, 235, 255,10);
+  color: black;
+  position: relative;
+  overflow: auto;
+  height: 550px; 
+  border-color:black;
+  border-style: solid;
+  width: 80%;
+  margin: 20px 10px 10px 0px;   
+ }
+.van1{
+  font-size: 14px;
+  position:top;
+} 
+.van2{
+  width: 98%;
+  white-space: normal;
+  word-break: break-all;
+  text-indent: 40rpx;
+  line-height:23px;
+  font-size: 14px;
+  border-color:rgb(192, 192, 11);
+  border-style: solid;
+  border-radius: 6rpx;
+} 
+.notice {
+  width: 98%;
+  height: 56rpx;
+  line-height: 56rpx;
+  background-color: #f3f2f2;
+  box-shadow: 0 3rpx 6rpx 1rpx rgba(0,97,6,0.4100);
+  border-radius: 30rpx;
+   /* position: relative;  */
+  top: 730rpx;
+  /* left: 20rpx; */
+  display: flex;
+  margin-top: -15px;
+}
+
+.notice image {
+  width: 36%;
+  margin: -1rpx 18rpx;
+}
+
+.notice .notice_desc {
+  margin-right: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+page{
+  background: rgb(170, 155, 233);
+  height:100%;
+}
+

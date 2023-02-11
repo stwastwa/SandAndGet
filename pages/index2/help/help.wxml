@@ -1,0 +1,8 @@
+<view style="background-color: rgb(255,255,255,0.7);width: 92vw;height: 92vh;margin-left: 4vw;margin-top: 4vh;border-radius: 40rpx; padding-top: 3vh;padding-left: 1.5vh;">
+  <scroll-view scroll-y style="height: 86vh;width: 86vw;" >
+    <view>欢迎使用“SendAndGet”微信小程序！</view>
+    <view>通过“SandAndGet”，你可以向设备的Esp32芯片发送指令，也可以接收设备发出的信号。</view>
+    <view style="font-weight: 600;margin-top: 10rpx; margin-bottom: 10rpx;">使用教程：</view>
+    <view>等下就写好吗~</view>
+  </scroll-view>
+</view>

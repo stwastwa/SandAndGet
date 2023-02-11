@@ -1,0 +1,119 @@
+/* pages/login2/login2.wxss */
+/* pages/login/login.wxss */
+page {
+  background-color:  #f3f2f2;
+}
+.head {
+  width: 100%;
+  height: 550rpx;
+  overflow: hidden;
+  position: fixed;
+  position: relative;
+}
+.head::after {
+  content: '';
+  width: 140%;
+  height: 550rpx;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  top: 0;
+  border-radius: 0 0 50% 50%;
+  background: #cf4037;
+}
+.user-info-box{
+  margin-top: 220rpx;
+  height: 180rpx;
+  display:flex;
+  align-items:center;
+  position:relative;
+  z-index: 1;
+}
+/*头像*/
+.user-info-box .portrait{
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 50rpx;
+  /*border:5rpx solid #fff;*/
+  border-radius: 50%;
+}
+/*用户名*/
+.user-info-box .username{
+  font-size: 40rpx;
+  color: #fff;
+  margin-left: 40rpx;
+  position:relative;
+}
+.nav-section {
+  display: flex;
+  background: #f3f2f2;
+  margin-top: -160rpx;
+  height: 150rpx;
+  margin-left: 5%;
+  width: 90%;
+  border-radius: 15rpx;
+  position: relative;
+  overflow: auto;
+  height: 100px; 
+  flex-direction: column;
+  border-color:black;
+  border-style: solid;
+  color: darkblue;
+}
+.van1{
+  font-size: 13px;
+  position:top;
+}
+.van2{
+  /* border: black;
+  border-width:2px ;
+  border-style: solid; */
+  width: 200px;
+  white-space: normal;
+  word-break: break-all;
+}
+/* 下方区域 */
+.nav-section2 {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin-top: 50rpx;
+  height: 180rpx;
+  margin-left: 5%;
+  width: 90%;
+  border-radius: 15rpx;
+}
+.title{
+  height: 40rpx;
+  background: #cf4037;
+  width: 22%;
+  border-radius: 15rpx 0 15rpx 0;
+  padding-top: 0rpx; 
+}
+.title .context{
+  font-size: 25rpx;
+  color: #fff;
+  margin-left: 15%;
+}
+/*导航图标区域样式*/
+.block{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.band_item {
+  width: 25%;
+  float: left;
+  margin-bottom: 19rpx;
+}
+.band_icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 20rpx;
+  border-radius: 50%;
+}

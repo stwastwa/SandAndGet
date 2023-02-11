@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index2/index2",
+    "pages/login2/login2",
+    "pages/logs/logs",
+    "pages/index2/inputSend/inputSend",
+    "pages/index2/help/help"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "SandAndGet Esp连接系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index2/index2",
+        "text": "主页",
+        "iconPath": "/img/index.png",
+        "selectedIconPath": "/img/index1.png"
+      },
+      {
+        "pagePath": "pages/login2/login2",
+        "text": "个人信息",
+        "iconPath": "/img/home.png",
+        "selectedIconPath": "/img/home1.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "设备记录",
+        "iconPath": "/img/info.png",
+        "selectedIconPath": "/img/info1.png"
+      }
+
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

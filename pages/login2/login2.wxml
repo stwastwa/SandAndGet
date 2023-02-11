@@ -1,0 +1,55 @@
+<view class="head mb20">
+  <view class="user-info-box">
+      <view class="portrait-box" bindtap="toLogin">
+        <image  class="portrait" src="{{userimg}}"></image>
+      </view>
+      <view class="info-box" style="width:420rpx;" bindtap="toLogin">
+        <text class="username">{{username}}</text>
+      </view>
+      <view bindtap="setIP">
+        <text style="color: #fff;;">设置ip地址</text>
+        <image style="width:50rpx;height: 50rpx;margin-left:20px" src="/img/backmana.png"></image>
+      </view>
+    </view>
+</view>
+<view class="nav-section"> 
+  <text class="van1">当前设备的ip地址：</text>
+  <text class="van2">{{userIp1}}</text>
+</view>
+<view class="nav-section2">
+  <view class="title"><text class="context">关于账号</text></view> 
+   <view class="block"> 
+    <block wx:for="{{items1}}" wx:key="item" wx:for-item="item0">
+      <view id="{{item0.id}}" bindtap="setLog" class="flex-column band_item">
+        <image src="{{item0.icon}}" class="band_icon" id="{{item0.id}}" bindtap="setLog" />
+        <text id="{{item0.id}}" bindtap="setLog">{{item0.name}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="nav-section2">
+  <view class="title"><text class="context">个人信息</text></view> 
+   <view class="block"> 
+    <block wx:for="{{items2}}" wx:key="item" wx:for-item="item0">
+      <view id="{{item0.id}}" bindtap="" class="flex-column band_item">
+        <image src="{{item0.icon}}" class="band_icon" id="{{item0.id}}" bindtap="" />
+        <text id="{{item0.id}}" bindtap="">{{item0.name}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="nav-section2">
+  <view class="title"><text class="context">设置</text></view> 
+   <view class="block"> 
+    <block wx:for="{{items3}}" wx:key="item" wx:for-item="item0">
+      <view id="{{item0.id}}" bindtap="" class="flex-column band_item">
+        <image src="{{item0.icon}}" class="band_icon" id="{{item0.id}}" bindtap="" />
+        <text id="{{item0.id}}" bindtap="">{{item0.name}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- <view>
+  <button bindtap="loginOut" style="margin-top: 130px;">退出登录</button>
+</view> -->
+

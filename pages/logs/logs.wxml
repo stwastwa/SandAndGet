@@ -1,0 +1,30 @@
+<view class="head mb20">
+  <view class="user-info-box">
+      <view class="portrait-box" >
+        <image  class="portrait" src="/img/history.png"></image>
+      </view>
+      <view class="info-box" style="width:420rpx;" >
+        <text class="username">本账号使用SendAndGet的记录:</text>
+      </view>
+      <view bindtap="setHistory" style="margin-left:62px;margin-top:7px">
+        <text style="color: #fff;font-size: 13px;">点击查询:</text>
+        <image style="width:50rpx;height: 50rpx;margin-left:10px  ;" src="/img/CheckHistory.png"></image>
+    </view>
+  </view>
+</view>
+<view class="notice">
+  <image src="/img/scroll.png" mode="widthFix" style="height:1px;width: 75px;"></image>
+  <view class="notice_desc" bindtap="gotoHelp">
+    <view style="transform: translateX(-{{ distance }}px);">
+      <text style="margin-right:{{ space }}px;"></text>
+      <text id="mjltest">点击左上方或下拉屏幕即可查询，每次只能查询最近20条记录，可多次点击。</text>
+    </view>
+  </view>
+</view>
+<view class="van0"  >
+  <view class="van"> 
+   <view class="van2" wx:for="{{history}}" wx:key="index" wx:for-item="stu"> 
+      <text>您于{{stu.time}}向“{{stu.ip}}”{{stu.SorR}}了“{{stu.message}}”，发送{{stu.ifsuccess}}。</text>
+    </view>
+  </view> 
+</view>
