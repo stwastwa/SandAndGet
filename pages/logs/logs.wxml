@@ -23,8 +23,10 @@
 </view>
 <view class="van0"  >
   <view class="van"> 
+   <block wx:if="{{islogin}}">
    <view class="van2" wx:for="{{history}}" wx:key="index" wx:for-item="stu"> 
       <text>您于{{stu.time}}向“{{stu.ip}}”{{stu.SorR}}了“{{stu.message}}”，发送{{stu.ifsuccess}}。</text>
     </view>
+  </block>
   </view> 
 </view>

@@ -26,7 +26,7 @@ Page({
   ],
   items2: [{//个人信息
     id: 0,
-    name: '设置个人资料',
+    name: '个人资料',
     icon: '/img/userinformation.png'
   },
 ],

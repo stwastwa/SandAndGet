@@ -9,8 +9,8 @@ App({
     
   },
   onLaunch(){
-    let userlogin=wx.getStorageSync('islogin')
-    let user=wx.getStorageSync('user')
+    let userlogin=wx.getStorageSync('islogin')//从本地读取用户是否登录
+    let user=wx.getStorageSync('user')//从本地读取用户信息
     // console.log(userlogin)
     this.globalData.islogin=userlogin//成功登陆
     this.globalData.userInfo=user

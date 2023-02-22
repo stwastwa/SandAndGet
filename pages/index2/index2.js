@@ -239,6 +239,7 @@ Page({
   onLoad(options) {
     this.scroll();//启动滑动文本
     
+    
   
 
   },
