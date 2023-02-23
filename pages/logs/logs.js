@@ -1,5 +1,6 @@
 // pages/logs/logs.js
 const app=getApp();
+const util = require('../../utils/util.js')
 Page({
 
   /**
@@ -9,13 +10,18 @@ Page({
     islogin:null,
     history:[],
    //滚动条
-   step: 0.5, // 滚动速度
+   step: 2, // 滚动速度
    distance: 360, // 初始滚动距离
    space: 300,
    interval: 30 ,// 时间间隔
-   total:0//每次查询获得数据的总数量
+   total:0,//每次查询获得数据的总数量
+   isLoading:false//上拉触底节流阀
 
   },
+  ifsetHistory:util.throttle(function (e){
+    this.setHistory();
+  },2000),//函数节流，防止重复触发
+
   setHistory(){
     
     if(app.globalData.islogin!=true){//未登录
@@ -25,7 +31,7 @@ Page({
       })
       return
     }
-    this.getHistory();
+    this.getHistory()//向云盘请求历史记录，由于限制，每次最多只能请求20条记录，但是可以重复触发。
     
   },
   getHistory(){ 
@@ -33,7 +39,7 @@ Page({
     wx.showLoading({ 
       title: '加载中...', 
     }) 
-    let len=this.data.history.length 
+    let len=this.data.history.length //查看当前本地已经显示了多少条记录
     console.log("当前history长度",len) 
     wx.cloud.database().collection("history") .
       where(
@@ -47,13 +53,14 @@ Page({
       .then(res =>{ 
         console.log("请求成功",res) 
         let dataList=res.data 
-        if(dataList.length<=0){ 
+        if(dataList.length<=0){ //已无更多数据
           wx.showToast({ 
             icon:"none", 
             title: '没有数据啦', 
+            duration:3000
           }) 
         } 
-        that.setData({ 
+        that.setData({ //将新得到的数据和本地已有的数据合并
           history:that.data.history.concat(res.data) 
         }) 
         wx.hideLoading(); 
@@ -201,7 +208,15 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    if(this.data.isLoading) return  //判断是否为true 
+    this.setData({
+      isLoading:true
+    })
+    this.ifsetHistory()// 重新获取列表数据
+    this.setData({
+      isLoading:false
+    })
+  
   },
 
   /**

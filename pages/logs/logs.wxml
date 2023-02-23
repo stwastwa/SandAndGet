@@ -6,7 +6,7 @@
       <view class="info-box" style="width:420rpx;" >
         <text class="username">本账号使用SendAndGet的记录:</text>
       </view>
-      <view bindtap="setHistory" style="margin-left:62px;margin-top:7px">
+      <view bindtap="ifsetHistory" style="margin-left:62px;margin-top:7px">
         <text style="color: #fff;font-size: 13px;">点击查询:</text>
         <image style="width:50rpx;height: 50rpx;margin-left:10px  ;" src="/img/CheckHistory.png"></image>
     </view>
@@ -17,7 +17,7 @@
   <view class="notice_desc" bindtap="gotoHelp">
     <view style="transform: translateX(-{{ distance }}px);">
       <text style="margin-right:{{ space }}px;"></text>
-      <text id="mjltest">点击左上方或下拉屏幕即可查询，每次只能查询最近20条记录，可多次点击。</text>
+      <text id="mjltest">点击左上方或上拉触底即可查询，每次只能查询最近20条记录。如需查询大于20条记录，请重复点击。</text>
     </view>
   </view>
 </view>

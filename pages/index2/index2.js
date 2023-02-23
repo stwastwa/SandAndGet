@@ -19,7 +19,7 @@ Page({
       // ifGet:false,//判断是否正在接收，节流阀
       history:[],
       //滚动条
-      step: 0.5, // 滚动速度
+      step: 2, // 滚动速度
       distance: 360, // 初始滚动距离
       space: 300,
       interval: 30 ,// 时间间隔
@@ -136,7 +136,7 @@ Page({
   //   setInterval(t, 500);
   //   // this.getData()
   // }, ifsendData:util.throttle(function (e){
-  ifgetData:util.throttle(function (e){
+  ifgetData:util.throttle(function (e){//函数节流，防止滚动机制多次触发，极其重要！！！！！
     if(app.globalData.islogin!=true){//如果未登录
       wx.showToast({//用户未登录
         title: "请先登录",
@@ -195,22 +195,26 @@ Page({
       url: '../logs/logs'
     })
   },
-  scroll(){//滑动文本
-    var that = this;
-    var query = wx.createSelectorQuery();
-    // 选择id
-    query.select('#mjltest').boundingClientRect();
-    query.exec(function(res) {
-      var length = res[0].width;
-      var windowWidth = wx.getSystemInfoSync().windowWidth; // 屏幕宽度
-      that.setData({
-        length: length,
-        windowWidth: windowWidth,
-        space:windowWidth
-      });
-      that.scrollling(); // 第一个字消失后立即从右边出现
-    })
-  },
+  scroll:util.throttle(function (e){
+    // scroll(){//滑动文本
+      var that = this;
+      var query = wx.createSelectorQuery();
+      // 选择id
+      query.select('#mjltest').boundingClientRect();
+      query.exec(function(res) {
+        console.log(res)
+        var length = res[0].width;
+        var windowWidth = wx.getSystemInfoSync().windowWidth; // 屏幕宽度
+        that.setData({
+          length: length,
+          windowWidth: windowWidth,
+          space:windowWidth
+        });
+        that.scrollling(); // 第一个字消失后立即从右边出现
+      })
+    
+  },114514000000000),//scroll为回调函数，只需要在页面启动时触发一次就好，无需多次触发。
+  
   scrollling: function() {//滑动文本具体参数设置
     var that = this;
     var length = that.data.length; // 滚动文字的宽度
